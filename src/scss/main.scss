@@ -1,0 +1,323 @@
+// Основные цвета START
+$primary: #0079BF;
+$text-color: #172b4d;
+$white: #fff;
+$black: #000;
+$danger: #FF647C;
+$success: #00c48c;
+$warning: #edba05;
+// Основные цвета END
+html {
+	font-size: 18px;
+}
+body {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'San Francisco Pro', Helvetica, Arial, sans-serif;
+	background: fixed $primary url('../img/app-bg.jpg') no-repeat;
+	background-size: cover;
+	color: $text-color;
+}
+h1 {
+	font-weight: 600;
+	margin: 0;
+}
+// Адаптивность START
+@media (min-width: 576px) {
+	.container {
+		max-width: 540px;
+	}
+	.xs-mt-2 {
+		margin-top: 10px;
+	}
+}
+@media (min-width: 768px) {
+	.container {
+		max-width: 720px;
+	}
+	.xs-mt-2 {
+		margin-top: 0;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		max-width: 960px;
+	}
+	.xs-mt-2 {
+		margin-top: 0;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1140px;
+	}
+	.xs-mt-2 {
+		margin-top: 0;
+	}
+}
+// Адаптивность END
+// Общие классы отступов, кнопок и др. START
+.container {
+	width: 100%;
+	margin-right: auto;
+  margin-left: auto;
+}
+.ml-0 {
+	margin-left: 0 !important;
+}
+.ml-1 {
+	margin-left: 5px;
+}
+.ml-2 {
+	margin-left: 10px;
+}
+.ml-3 {
+	margin-left: 15px;
+}
+.ml-auto {
+	margin-left: auto;
+}
+.mr-1 {
+	margin-right: 5px;
+}
+.mr-2 {
+	margin-right: 10px;
+}
+.mr-3 {
+	margin-right: 15px;
+}
+.mr-auto {
+	margin-right: auto;
+}
+.mb-1 {
+	margin-bottom: 5px;
+}
+.mb-2 {
+	margin-bottom: 10px;
+}
+.mb-3 {
+	margin-bottom: 15px;
+}
+.h-100 {
+	height: 100%;
+}
+.content-box {
+	margin: 25px;
+	background-color: rgba(235, 236, 240, 0.9);
+	padding: 20px;
+	border-radius: 3px;
+	box-shadow: 0 5px 10px $black; 
+}
+.btn {
+	padding: 7.5px 15px;
+	cursor: pointer;
+	background-color: $primary;
+	color: $white;
+	border: 1px solid $primary;
+	border-radius: 7.5px;
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		color: $white;
+		background-color: darken($primary, 15%);
+		border-color: darken($primary, 15%);
+	}
+	&:active {
+		box-shadow: 0 0 0 0.025em darken($primary, 15%);
+	}
+}.btn-add {
+	font-size: 1rem;
+}
+.btn__danger {
+	background-color: $danger;
+	border-color: $danger;
+	&:hover {
+		background-color: darken($danger, 15%);
+		border-color: darken($danger, 15%);
+	}
+	&:active {
+		box-shadow: 0 0 0 0.025em darken($danger, 15%);
+	}
+}
+.btn__success {
+	background-color: $success;
+	border-color: $success;
+	&:hover {
+		background-color: darken($success, 15%);
+		border-color: darken($success, 15%);
+	}
+	&:active {
+		box-shadow: 0 0 0 0.025em darken($success, 15%);
+	}
+}
+.btn__warning {
+	background-color: $warning;
+	border-color: $warning;
+	&:hover {
+		background-color: darken($warning, 15%);
+		border-color: darken($warning, 15%);
+	}
+	&:active {
+		box-shadow: 0 0 0 0.025em darken($warning, 15%);
+	}
+}
+.btn-mini {
+	height: 100%;
+	font-size: 1rem;
+	padding: 3px 3.5px;
+	line-height: 1;
+	border-radius: 4px;
+}
+input[type=text] {
+	margin: 0 15px;
+	padding: 2.5px 5px;
+	font-size: .9rem;
+	color: $text-color;
+	border: none;
+	border-bottom: 1px solid #979797;
+	&:focus {
+		box-shadow: 0 3px 2px -2px #979797;
+		outline: none;
+	}
+}
+.checkbox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1px;
+	line-height: 1;
+	border: 1px solid #cfcfcf;
+	color: #cfcfcf;
+	border-radius: 5px;
+}
+.checkbox__success {
+	color: $white;
+	border-color: $success;
+	background-color: $success;
+}
+.control {
+	cursor: pointer;
+}
+.control input {
+	display: none;
+}
+.control input:checked ~ .checkbox {
+	color: $white;
+	border-color: $success;
+	background-color: $success;
+	& .check {
+		display: block;
+	}
+	& .notcheck {
+		display: none;
+	}
+}
+.control input:not(:checked) ~ .checkbox {
+	& .check {
+		display: none;
+	}
+	& .notcheck {
+		display: block;
+	}
+}
+// Общие классы отступов, кнопок и др. END
+// Main component START
+.main-header {
+	display: flex;
+	align-items: center;
+}
+// Main component END
+// NoteList component START
+.notelist-box {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 7.5px;
+	background-color: $white;
+	border-radius: 4px;
+	box-shadow: 0 3px 5px -3px $black;
+}
+.note-box {
+	margin: 7.5px;
+	background-color: #ebecf0;
+	border-radius: 1px;
+	box-shadow: 0 1px 2px -1px $black; 
+}
+.note-header {
+	display: flex;
+	align-items: center;
+	font-size: 1.1rem;
+	font-weight: 500;
+	padding: 7.5px 15px;
+	box-shadow: 0 1px 5px -3px $black;
+}
+.note-list {
+	padding: 2.5px 0;
+}
+.list-item {
+	display: flex;
+	align-items: center;
+	font-size: 0.9rem;
+	margin: 7.5px;
+	& .text {
+		display: inline;
+		width: 100%;
+		background-color: $white;
+		padding: 5px 10px;
+		border-radius: 2px;
+		box-shadow: 0 2px 5px -4px $black;
+		margin-left: 7.5px;
+	}
+}
+// NoteList component END
+// NoteEdit component START
+.note-edit-box {
+	@extend .notelist-box;
+	padding: 15px;
+	flex-direction: column;
+}
+.note-item-box {
+	flex-wrap: wrap;
+	margin: 7.5px 0;
+	display: flex;
+	align-items: center;
+}
+// NoteEdit component END
+// MODAL STYLES START
+ .modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+}
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+}
+.modal-header h3 {
+  margin-top: 0;
+  color: $primary;
+}
+.modal-body {
+  margin: 30px 0;
+}
+.modal-footer {
+	display: flex;
+	justify-content: flex-end;
+}
+.modal-default-button {
+	
+}
+// MODAL STYLES END
