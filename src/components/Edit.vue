@@ -20,19 +20,19 @@
 	    </div>
 	  </modal>
 
-		<div class="mb-3 ml-3">
+		<div class="mb-3 ml-1 ml-md-3">
 			<h1>Редактирование</h1>
 		</div>
 		<div class="note-edit-box">
 			<div class="note-item-box">
-				<label for="note-name">Заголовок:</label>
-				<input v-model.lazy="noteData.header" type="text" id="note-name">
+				<label class="mr-2 mr-md-3" for="note-name">Заголовок:</label>
+				<input class="ml-0 mr-2 mr-md-3" v-model.lazy="noteData.header" type="text" id="note-name">
 				<button @click="showModalDel = true" class="xs-mt-2 btn btn__danger">Удалить заметку<i class="ml-1 las la-trash"></i></button>
 			</div>
 			<div class="note-item-box">
 				<div for="note-name">Пункты:</div>
-				<button @click="addSubnote()" class="ml-3 btn">Добавить<i class="ml-1 las la-plus"></i></button>
-				<button @click="historyBack()" class="ml-3 btn btn-mini"><i class="las la-undo-alt"></i></button>
+				<button @click="addSubnote()" class="ml-2 ml-sm-3 btn">Добавить<i class="ml-1 las la-plus"></i></button>
+				<button @click="historyBack()" class="ml-2 ml-sm-3 btn btn-mini"><i class="las la-undo-alt"></i></button>
 				<button @click="historyNext()" class="ml-1 btn btn-mini"><i class="las la-redo-alt"></i></button>
 			</div>
 			

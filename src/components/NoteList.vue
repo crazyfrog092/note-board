@@ -1,14 +1,14 @@
 <!-- Компонент заметок на главной -->
 <template>
 	<div class="notelist-box">
-  <modal v-if="showModal" @close="showModal = false">
-    <h3 slot="header">Удаление заметки</h3>
-    <div slot="body">Вы действительно хотите удалить эту заметку?</div>
-    <div slot="footer">
-    	<button @click="delNote(noteId)" class="btn btn__danger mr-3">Удалить</button>
-			<button @click="showModal = false" class="btn">Отмена</button>
-    </div>
-  </modal>
+	  <modal v-if="showModal" @close="showModal = false">
+	    <h3 slot="header">Удаление заметки</h3>
+	    <div slot="body">Вы действительно хотите удалить эту заметку?</div>
+	    <div slot="footer">
+	    	<button @click="delNote(noteId)" class="btn btn__danger mr-3">Удалить</button>
+				<button @click="showModal = false" class="btn">Отмена</button>
+	    </div>
+	  </modal>
 		<template v-for="(note, key) in notes">
 			<div :key="key" class="note-box">
 				<div class="note-header">
